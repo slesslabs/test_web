@@ -36,7 +36,7 @@
                 background-color: whitesmoke;
                 color: gray;
                 margin-bottom: 15px;
-                max-width: 10rem;
+                max-width: 20rem;
             }
             .clearfix::after {
                 content: '';
@@ -75,6 +75,7 @@
                 let msg = document.createElement('div');
                 msg.classList.add('msg');
                 msg.style.float = data ? 'left' : 'right';
+                msg.style['margin' + (!data ? 'Left' : 'Right')] = '1rem';
                 msg.textContent = data || document.querySelector('#text').value;
                 container.appendChild(msg);
                 document.querySelector('#msgbox').appendChild(container);

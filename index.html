@@ -79,7 +79,11 @@
                 msg.textContent = data || document.querySelector('#text').value;
                 container.appendChild(msg);
                 document.querySelector('#msgbox').appendChild(container);
-                if (!data) document.querySelector('#text').value = '';
+                if (!data) {
+                    document.querySelector('#text').value = '';
+                    let box = document.querySelector('#msgbox')
+                    box.scrollTop = box.scrollHeight;
+                }
             }
             var lcd = document.querySelector('#lcd');
             var peer = new Peer(null, {
